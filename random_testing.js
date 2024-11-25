@@ -22,10 +22,13 @@ describe('Random Input Generation Test', function () {
         const generateSpecialCharString = () => 
             faker.helpers.arrayElements(specialChars, 10).join('')
 
+        const randomNimEmail = (Math.floor(Math.random() * (2200016150 - 2200016001 + 1)) + 2200016001).toString() + '@gmail.com'
+
         const randomInputs = [
             generateSpecialCharString(),                     
             faker.internet.email(),
             faker.phone.number(),
+            randomNimEmail
         ];
 
         const randomInput = randomInputs[Math.floor(Math.random() * randomInputs.length)]
